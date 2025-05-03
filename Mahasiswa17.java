@@ -10,7 +10,7 @@ public class Mahasiswa17 {
         this.nama = nama;
         this.nim = nim;
         this.kelas = kelas;
-        this.nilai = -1;
+        nilai = -1;
     }
 
     void tugasDinilai(int nilai) {

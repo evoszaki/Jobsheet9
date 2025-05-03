@@ -10,16 +10,25 @@ public class StackTugasMahasiswa17 {
     }
     
     public boolean isFull() {
-        return top == size - 1;
+        if (top == size - 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean isEmpty() {
-        return top == -1;
+        if (top == -1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void push(Mahasiswa17 mhs) {
         if (!isFull()) {
-            stack[++top] = mhs;
+            top++;
+            stack[top] = mhs;
         } else {
             System.out.println("Stack penuh! tidak bisa menambah tugas lagi.");
         }
@@ -27,7 +36,9 @@ public class StackTugasMahasiswa17 {
 
     public Mahasiswa17 pop() {
         if (!isEmpty()) {
-            return stack[top--];
+            Mahasiswa17 m = stack[top];
+            top--;
+            return m;
         } else {
             System.out.println("Stack kosong! tidak ada tugas untuk dinilai.");
             return null;
@@ -57,9 +68,10 @@ public class StackTugasMahasiswa17 {
     }
 
     public void print() {
-        for (int i = 0; i <= top; i++) {
-            System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas + "\t");
+        for (int i = top; i >= 0; i--) {
+            System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas);
         }
+        System.out.println("");
     }
 
     public String konversiDesimalKeBiner(int nilai) {
